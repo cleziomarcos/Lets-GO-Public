@@ -1,1 +1,1 @@
-console.log("main")
+console.log("Let's GO! main")
