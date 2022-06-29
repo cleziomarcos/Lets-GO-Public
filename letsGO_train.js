@@ -1,1 +1,1 @@
-console.log("train")
+console.log("Let's GO! train")
