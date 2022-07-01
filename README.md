@@ -1,3 +1,3 @@
 # Lets-GO-Public
 
-Instruções de configuração: https://youtu.be/YlE-QAOrsy8
+Instruções de uso e configuração: https://youtu.be/YlE-QAOrsy8
