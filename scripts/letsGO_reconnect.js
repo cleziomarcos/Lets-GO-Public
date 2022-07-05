@@ -1,1 +1,116 @@
-(()=>{"use strict";const e=(e,t)=>Math.floor(Math.random()*(Math.floor(t)-Math.ceil(e)+1))+Math.ceil(e),t=JSON.parse(localStorage.getItem("players")),r=document.referrer.split(".")[0].split("//")[1],n=Array.from(document.querySelectorAll("#home > div.center > div.content.box-border.red > div.inner > div.right.login > div.wrap > div:nth-child(4) input")),l=n.map((e=>e.checked)),o=document.querySelector("#reconnectAll"),c=()=>{console.log("ref: "+r),t[u][r]?setTimeout((()=>{1==t[u][r].reconnect&&(self.location=t[u][r].href)}),e(1e3,1e4)+6e4):setTimeout((()=>window.history.go(-1)),e(1e3,1e4)+3e4)};function i(e){"checkbox"==e.target.attributes[0].value&&(e=>{if("reconnectAll"==e.target.id){n.forEach((t=>t.checked=e.target.checked));for(const r in t[u])Object.hasOwnProperty.call(t[u],r)&&(t[u][r].reconnect=e.target.checked)}else t[u][e.target.name].reconnect=e.target.checked,o.checked=a(l);localStorage.setItem("players",JSON.stringify(t))})(e),c()}const a=e=>!(e.reduce(((e,t)=>e+(0==t?1:0)),0)>=e.length/2),s=document.querySelector("#home div.right.login div.wrap"),u="Login"!=s.querySelector("h2").innerText&&s.querySelector("h2").innerText.split(" ")[1];localStorage.players||localStorage.setItem("players",JSON.stringify({}));const g=JSON.parse(localStorage.getItem("players"));g[u]||(g[u]={});const d=(e,t="00:00:00",r="000")=>{let n=t?Number(t.substring(0,2)):0,l=t?Number(t.substring(3,5)):0,o=t?Number(t.substring(6,8)):0,c=t&&t.length>8?Number(t.substring(9,t.length)):0;r&&(c=Number(r));let i=Number(e.substring(0,2)),a=Number(e.substring(3,5))-1,s=Number(e.substring(6,e.length));return Date.parse(new Date(s,a,i,n,l,o))+c},h=["fT","yQ","rb","st","Lo","zP","Nx","ga","uV","Hl"],p=["ak","jW","ij","fd","Oa","hw","Uh","kj","Ag","Yw"],m=["_3","7@","&6","2%","8$","0*","#9","-5","1+","!4"],f="abcdefghijklmnopqrstuvxwyz".split(""),b=[...h,...p,...m];function y(e){let t="",r="";for(let n=1;n<=e.length;n+=2)t=String(b.indexOf(e.substring(n-1,n+1))),r+=t.substring(t.length-1);return r}localStorage.keyGO&&JSON.parse(localStorage.keyGO).key&&function(e){let t=!0,r=(new Date).toLocaleDateString(),n=(new Date).toLocaleTimeString(),l=e.split("="),o=l[0].split("_")[0],c=l[0].split("_")[1];if(!u)return!1;t=!0===t&&c==u;let i=l[2].split(":"),a=i[1],s=i[2].split(".")[0];t=!0===t&&s==function(e){let t=e.toLowerCase().split(""),r="",n=1;for(let e=0;e<t.length&&!(-1!=f.indexOf(t[e])&&(r+=f.indexOf(t[e]),n++,n>3));e++);return r}(c);let g=i[2].split(".")[1];t=!0===t&&g==function(e){let t=e.split(""),r="";for(let e=0;e<t.length;e++)r+=String(f.indexOf(t[e]));t=r.split("");let n="";for(let e=0;e<t.length;e++)-1!=[0,3,6].indexOf(e)&&(n+=h[t[e]]),-1!=[1,4,7].indexOf(e)&&(n+=p[t[e]]),-1!=[2,5,8].indexOf(e)&&(n+=m[t[e]]);return n}(o.match(/[a-z]/gi).reduce(((e,t)=>e+t),""));let b=i[3];return t=!0===t&&d(r,n)<d(new Date(Number(y(b)+y(a)+"00000")).toLocaleDateString(),new Date(Number(y(b)+y(a)+"00000")).toLocaleTimeString()),t}(JSON.parse(localStorage.keyGO).key)&&u&&(function(){const e=Array.from(document.querySelector("#home div.worlds-container").querySelectorAll("a")),t=e.map((e=>e.children[0].innerText)),r=e.map((e=>e.attributes[1].value.split("/")[3])),n=e.map((e=>e.attributes[1].value)),l=[];for(let e=0;e<r.length;e++)g[u][r[e]]||(g[u][r[e]]={},g[u][r[e]].href=n[e],g[u][r[e]].reconnect=!1),l.push(g[u][r[e]].reconnect),localStorage.setItem("players",JSON.stringify(g));for(let n=0;n<e.length;n++)e[n].innerHTML=`<div style="display: inline-flex;"><label for="r_${r[n]}" title="Select to reconnect this world" style="width: 15%; height: 12px; margin-right: 3px;"><input type="checkbox" name="${r[n]}" id="r_${r[n]}" ${1==g[u][r[n]].reconnect?"checked":""}></label><span class="world_button_active">${t[n]}</span></div>`;const o=document.createElement("div");s.append(o),o.className="worlds-container",o.innerHTML=`<label for="reconnectAll" style="font-weight: bold; color: brown;" title="Select to reconnect all worlds" ><input type="checkbox" name="reconnectAll" id="reconnectAll" ${1==a(l)?"checked":""} > Reconnect all</label>`,document.addEventListener("click",i)}(),c())})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./js/interface.js":
+/*!*************************!*\
+  !*** ./js/interface.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"reconnectAllChecked\": () => (/* binding */ reconnectAllChecked),\n/* harmony export */   \"reconnectInterface\": () => (/* binding */ reconnectInterface),\n/* harmony export */   \"user_name\": () => (/* binding */ user_name)\n/* harmony export */ });\n/* harmony import */ var _reconnect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reconnect */ \"./js/reconnect.js\");\n\r\n\r\n// --- retorna true ou falso dependendo da quantidade de mundos marcados\r\nconst reconnectAllChecked = (arr) => arr.reduce(( n, e ) => e == false ? n += 1 : n += 0, 0 ) >= arr.length / 2 ? false : true\r\n// --- estancia a div aonde tem as informações que serão trabalhadas\r\nconst right_login_wrap = document.querySelector( \"#home div.right.login div.wrap\" )\r\n\r\n// --- retorna usuário ou false se não conectado\r\nconst user_name = right_login_wrap.querySelector(\"h2\").innerText == \"Login\" ? false : right_login_wrap.querySelector(\"h2\").innerText.split(\" \")[1]\r\n\r\n// --- objeto player aonde serão guardados os dados\r\nif ( !localStorage.players ) localStorage.setItem( \"players\", JSON.stringify( {} ) )\r\nconst players = JSON.parse( localStorage.getItem( \"players\" ) )\r\n\r\n// --- caso o player ainda mão exista\r\nif ( !players[user_name] ) players[user_name] = {}\r\n\r\nfunction reconnectInterface() {\r\n    // --- botões dos mundos\r\n    const worlds = Array.from(document.querySelector(\"#home div.worlds-container\").querySelectorAll(\"a\"))\r\n\r\n    // --- nome dos mundos\r\n    const worlds_name = worlds.map( e => e.children[0].innerText )\r\n\r\n    // --- ref dos mundos\r\n    const worlds_ref = worlds.map( e => e.attributes[1].value.split('/')[ 3 ] )\r\n\r\n    // --- href dos mundos\r\n    const worlds_href = worlds.map( e => e.attributes[1].value )\r\n\r\n    // --- caso o mundo ainda não exista\r\n    const arrReconnect = [] // --- guarda as opções de recconet num array\r\n    for (let i = 0; i < worlds_ref.length; i++) {\r\n        if ( !players[user_name][ worlds_ref[i] ] ) {\r\n            players[user_name][ worlds_ref[i] ] = {}\r\n            players[user_name][ worlds_ref[i] ].href = worlds_href[i]\r\n            players[user_name][ worlds_ref[i] ].reconnect = false\r\n        }\r\n        arrReconnect.push( players[user_name][ worlds_ref[i] ].reconnect )\r\n        localStorage.setItem( \"players\", JSON.stringify( players ) )\r\n    }\r\n\r\n    // --- cria interface do reconect para cada mundo\r\n    for ( let i = 0; i < worlds.length; i++ ) {\r\n        worlds[i].innerHTML = `<div style=\"display: inline-flex;\"><label for=\"r_${worlds_ref[i]}\" title=\"Select to reconnect this world\" style=\"width: 15%; height: 12px; margin-right: 3px;\"><input type=\"checkbox\" name=\"${worlds_ref[i]}\" id=\"r_${worlds_ref[i]}\" ${ players[user_name][worlds_ref[i]].reconnect == true ? \"checked\" : \"\" }></label><span class=\"world_button_active\">${worlds_name[i]}</span></div>`\r\n\r\n    }\r\n    const worlds_container = document.createElement( \"div\" )\r\n    right_login_wrap.append( worlds_container )\r\n    worlds_container.className = \"worlds-container\"\r\n    worlds_container.innerHTML = `<label for=\"reconnectAll\" style=\"font-weight: bold; color: brown;\" title=\"Select to reconnect all worlds\" ><input type=\"checkbox\" name=\"reconnectAll\" id=\"reconnectAll\" ${ reconnectAllChecked(arrReconnect) == true ? \"checked\" : \"\"} > Reconnect all</label>`\r\n\r\n    document.addEventListener( \"click\", _reconnect__WEBPACK_IMPORTED_MODULE_0__.reconnectClick )\r\n\r\n}\r\n\n\n//# sourceURL=webpack://reconnect/./js/interface.js?");
+
+/***/ }),
+
+/***/ "./js/main.js":
+/*!********************!*\
+  !*** ./js/main.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./interface */ \"./js/interface.js\");\n/* harmony import */ var _reconnect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reconnect */ \"./js/reconnect.js\");\n/* harmony import */ var _version__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./version */ \"./js/version.js\");\n\r\n\r\n\r\n\r\n(() => {\r\n    if ( !localStorage.keyGO ) return\r\n    if ( !JSON.parse( localStorage.keyGO ).key ) return\r\n\r\n    if ( (0,_version__WEBPACK_IMPORTED_MODULE_2__.returnVersion)() && _interface__WEBPACK_IMPORTED_MODULE_0__.user_name ) {\r\n        (0,_interface__WEBPACK_IMPORTED_MODULE_0__.reconnectInterface)()\r\n        ;(0,_reconnect__WEBPACK_IMPORTED_MODULE_1__.reconnect)()    \r\n    }\r\n})();\r\n\n\n//# sourceURL=webpack://reconnect/./js/main.js?");
+
+/***/ }),
+
+/***/ "./js/reconnect.js":
+/*!*************************!*\
+  !*** ./js/reconnect.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"reconnect\": () => (/* binding */ reconnect),\n/* harmony export */   \"reconnectClick\": () => (/* binding */ reconnectClick)\n/* harmony export */ });\n/* harmony import */ var _interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./interface */ \"./js/interface.js\");\n\r\n\r\n// --- randomiza o tempo\r\nconst random = ( min, max ) => Math.floor( Math.random() * ( Math.floor( max ) - Math.ceil( min ) + 1 ) ) + Math.ceil( min );\r\nconst players = JSON.parse( localStorage.getItem( \"players\" ) )\r\nconst ref = document.referrer.split( \".\" )[ 0 ].split( \"//\" )[ 1 ]\r\nconst arrInputs = Array.from(document.querySelectorAll(\"#home > div.center > div.content.box-border.red > div.inner > div.right.login > div.wrap > div:nth-child(4) input\"))\r\nconst arrChecked = arrInputs.map( e => e.checked )\r\nconst inputAll = document.querySelector(\"#reconnectAll\")\r\n\r\n// --- dentifica o mundo desconectado e se ativado reconnect se reconecta a ele depois de 1m\r\nconst reconnect = () => {     \r\n    console.log( \"ref: \" + ref )\r\n    if ( !players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name][ ref ] ) {\r\n        setTimeout(() => window.history.go(-1), random( 1000, 10 * 1000 ) + ( 30 * 1000 ) ) // --- tenta voltar a pagina anterior\r\n    } else {\r\n        setTimeout(() => {\r\n            if ( players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name][ ref ].reconnect == true ) {\r\n                self.location = players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name][ ref ].href\r\n            }\r\n        }, random( 1000, 10 * 1000 ) + ( 60 * 1000 ) )\r\n    }\r\n}\r\n    \r\nconst selectWorld = (e) => {\r\n    if ( e.target.id == \"reconnectAll\" ) {\r\n        arrInputs.forEach( element => element.checked = e.target.checked )\r\n        for (const key in players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name]) {\r\n            if (Object.hasOwnProperty.call(players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name], key)) {\r\n                players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name][key].reconnect = e.target.checked\r\n            }\r\n        }\r\n    } else {\r\n        players[_interface__WEBPACK_IMPORTED_MODULE_0__.user_name][e.target.name].reconnect = e.target.checked\r\n        inputAll.checked = (0,_interface__WEBPACK_IMPORTED_MODULE_0__.reconnectAllChecked)( arrChecked )\r\n    }\r\n    localStorage.setItem( \"players\", JSON.stringify( players ) )\r\n}\r\n\r\n// --- identifica os clicks e age conforme o que for clicado\r\nfunction reconnectClick(e) {\r\n    if ( e.target.attributes[0].value == \"checkbox\" ) {\r\n        selectWorld(e)\r\n    // } else if ( e.target.attributes[ 0 ].value == \"world_button_active\" ) {\r\n    //     e.preventDefault()\r\n    //     self.location = e.path[ 1 ].attributes[ 1 ].value\r\n    }\r\n    reconnect()\r\n}\n\n//# sourceURL=webpack://reconnect/./js/reconnect.js?");
+
+/***/ }),
+
+/***/ "./js/version.js":
+/*!***********************!*\
+  !*** ./js/version.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"returnVersion\": () => (/* binding */ returnVersion)\n/* harmony export */ });\n/* harmony import */ var _interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./interface */ \"./js/interface.js\");\n\r\n\r\nconst nDateTime = ( c_data, c_hora = \"00:00:00\", c_ms = \"000\" ) => {\r\n    let n_hh = c_hora ? Number( c_hora.substring( 0, 2 ) ) : 0\r\n    let n_mm = c_hora ? Number( c_hora.substring( 3, 5) ) : 0\r\n    let n_ss = c_hora ? Number( c_hora.substring( 6, 8) ) : 0\r\n    let n_ms = c_hora ? c_hora.length > 8 ? Number ( c_hora.substring( 9, c_hora.length ) ) : 0 : 0\r\n    if ( c_ms ) n_ms = Number( c_ms )\r\n    let n_Dia = Number( c_data.substring( 0, 2 ) )\r\n    let n_Mes = Number( c_data.substring( 3, 5 ) ) - 1\r\n    let n_Ano = Number( c_data.substring( 6, c_data.length) )\r\n    return Date.parse( new Date( n_Ano, n_Mes, n_Dia, n_hh, n_mm, n_ss ) ) + n_ms\r\n}\r\nconst s1 = ['fT', 'yQ', 'rb', 'st', 'Lo', 'zP', 'Nx', 'ga', 'uV', 'Hl']\r\nconst s2 = ['ak', 'jW', 'ij', 'fd', 'Oa', 'hw', 'Uh', 'kj', 'Ag', 'Yw']\r\nconst s3 = ['_3', '7@', '&6', '2%', '8$', '0*', '#9', '-5', '1+', '!4']\r\nconst alphabet = 'abcdefghijklmnopqrstuvxwyz'.split('')\r\nconst arrS = [...s1,...s2,...s3]\r\nfunction returnCodServer( server ) {\r\n    let arrServer = server.split(\"\")\r\n    let strNumServer = \"\"\r\n    for ( let i = 0; i < arrServer.length; i++ ) {\r\n        strNumServer += String( alphabet.indexOf( arrServer[ i ] ) )\r\n    }\r\n    arrServer = strNumServer.split(\"\")\r\n    let cod_server = \"\"\r\n    for ( let i = 0; i < arrServer.length; i++ ) {\r\n        if ( [ 0, 3, 6 ].indexOf(i) != -1 ) cod_server += s1[ arrServer[ i ] ]\r\n        if ( [ 1, 4, 7 ].indexOf(i) != -1 ) cod_server += s2[ arrServer[ i ] ]\r\n        if ( [ 2, 5, 8 ].indexOf(i) != -1 ) cod_server += s3[ arrServer[ i ] ]\r\n    }\r\n    return cod_server  \r\n}\r\nfunction returnNumLettersName( player ) {\r\n    let arrPlayer = player.toLowerCase().split(\"\")\r\n    let numLetters = \"\"\r\n    let n = 1\r\n    for (let i = 0; i < arrPlayer.length; i++) {\r\n        if ( alphabet.indexOf( arrPlayer[ i ] ) != -1 ) {\r\n            numLetters += alphabet.indexOf( arrPlayer[ i ] )\r\n            n++\r\n            if ( n > 3 ) break\r\n        }\r\n    }\r\n    return numLetters\r\n}\r\nfunction returnNumCode( cod_ ) {\r\n    let n = \"\", numCod = \"\"\r\n    for ( let i = 1; i <= cod_.length; i += 2 ) {\r\n        n = String( arrS.indexOf( cod_.substring( i - 1, i + 1 ) ))\r\n        numCod += n.substring(n.length - 1)\r\n    }\r\n    return numCod\r\n}    \r\nfunction verifyKey( key ) {\r\n    let version = true\r\n    let s_date = new Date().toLocaleDateString()\r\n    let s_time = new Date().toLocaleTimeString()\r\n    let key1 = key.split(\"=\")\r\n    let server_world = key1[0].split(\"_\")[0]\r\n    let player = key1[0].split(\"_\")[1]\r\n    if ( !_interface__WEBPACK_IMPORTED_MODULE_0__.user_name ) return false\r\n    version = version === true ? player == _interface__WEBPACK_IMPORTED_MODULE_0__.user_name : false\r\n    let key2 = key1[2].split(\":\")\r\n    let code_date2 = key2[1]\r\n    let n1 = key2[2].split(\".\")[0]\r\n    version = version === true ? n1 == returnNumLettersName( player ) : false\r\n    let cod_server = key2[2].split(\".\")[1]\r\n    version = version === true \r\n    ? cod_server == returnCodServer( server_world.match(/[a-z]/ig).reduce((i, e) => i += e , \"\") ) : false\r\n    let code_date1= key2[3]\r\n    version = version === true \r\n    ? nDateTime( s_date, s_time ) < nDateTime( \r\n        new Date( Number( returnNumCode( code_date1 ) + returnNumCode( code_date2 ) + \"00000\" ) ).toLocaleDateString(),\r\n        new Date( Number( returnNumCode( code_date1 ) + returnNumCode( code_date2 ) + \"00000\" ) ).toLocaleTimeString()\r\n    ) \r\n    : false\r\n    return version\r\n}\r\nconst returnVersion = () => verifyKey( JSON.parse( localStorage.keyGO ).key )\n\n//# sourceURL=webpack://reconnect/./js/version.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./js/main.js");
+/******/ 	
+/******/ })()
+;
