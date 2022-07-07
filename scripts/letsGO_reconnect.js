@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _reconnect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reconnect */ \"./js/reconnect.js\");\n/* harmony import */ var _version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../version */ \"../version.js\");\n\r\n\r\n\r\n(() => {\r\n    if ( !localStorage.keyGO ) return\r\n    if ( !JSON.parse( localStorage.keyGO ).key ) return\r\n    const returnVersion = () => (0,_version__WEBPACK_IMPORTED_MODULE_1__.verifyKey)( JSON.parse( localStorage.keyGO ).key )\r\n    if ( returnVersion() && _reconnect__WEBPACK_IMPORTED_MODULE_0__.user_name ) {\r\n        (0,_reconnect__WEBPACK_IMPORTED_MODULE_0__.reconnectInterface)()\r\n    }\r\n})();\r\n\n\n//# sourceURL=webpack://reconnect/./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _reconnect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reconnect */ \"./js/reconnect.js\");\n/* harmony import */ var _version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../version */ \"../version.js\");\n\r\n\r\n\r\n(() => {\r\n    if ( !localStorage.keyGO ) return\r\n    if ( !JSON.parse( localStorage.keyGO ).key ) return\r\n    const returnVersion = () => (0,_version__WEBPACK_IMPORTED_MODULE_1__.verifyKeyLogin)( JSON.parse( localStorage.keyGO ).key )\r\n    if ( returnVersion() && _reconnect__WEBPACK_IMPORTED_MODULE_0__.user_name ) {\r\n        (0,_reconnect__WEBPACK_IMPORTED_MODULE_0__.reconnectInterface)()\r\n    }\r\n})();\r\n\n\n//# sourceURL=webpack://reconnect/./js/main.js?");
 
 /***/ }),
 
